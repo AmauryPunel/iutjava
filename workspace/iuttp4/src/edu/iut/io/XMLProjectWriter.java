@@ -42,7 +42,7 @@ public class XMLProjectWriter {
 			for(ExamEvent ee : data){
 				Element event = document.createElement("event");
 				event.setAttribute("date", ee.getDate().toString());
-				Element student = document.createElement("student");
+				/*Element student = document.createElement("student");
 				student.setAttribute("function", ee.getStudent().getFunction().name());
 				student.setAttribute("firstname", ee.getStudent().getFirstname());
 				student.setAttribute("lastname", ee.getStudent().getLastname());
@@ -65,7 +65,7 @@ public class XMLProjectWriter {
 					Element documents = document.createElement("document");
 					documents.setAttribute("URI", ee.getDocuments().get(i).getDocumentURI());
 					event.appendChild(documents);
-				}
+				}*/
 				root.appendChild(event);
 			}
 			document.appendChild(root);

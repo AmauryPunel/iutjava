@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import edu.iut.app.*;
 import edu.iut.app.Person.PersonFunction;
@@ -50,14 +51,16 @@ public class XMLProjectReader {
 					// On récupère la date
 					Element dateElement = (Element) child;
 					String dateTempS = dateElement.getAttribute("date");
-					SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+					//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+					SimpleDateFormat ft= new SimpleDateFormat("EEE MMM dd hh:mm:ss z yyyy", Locale.US);
 					Date dateTemp = null;
 					try {
-						dateTemp = sdf.parse(dateTempS);
+						dateTemp = ft.parse(dateTempS);
 					} catch (ParseException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					/*
 					// On récupère l'étudiant
 					NodeList students = ((Element) child).getElementsByTagName("student");
 					Person student;
@@ -99,7 +102,9 @@ public class XMLProjectReader {
 						edu.iut.app.Document docTemp = new edu.iut.app.Document(URI);
 						listeDocuments.add(docTemp);
 					}
-					ExamEvent examTemp = new ExamEvent(dateTemp, student, listeProf, classTemp, listeDocuments);
+					*/
+					//ExamEvent examTemp = new ExamEvent(dateTemp, student, listeProf, classTemp, listeDocuments);
+					ExamEvent examTemp = new ExamEvent(dateTemp, null, null, null, null);
 					data.add(examTemp);
 				}
 			}

@@ -35,11 +35,6 @@ public class DayPanel extends EventPanel {
 				this.add(hour);
 			}
 			break;
-		case MONTH_VIEW:
-			JPanel hour = new JPanel();
-			hour.add(new JLabel("H"));
-			this.add(hour);
-		
 		}
 	}
 	

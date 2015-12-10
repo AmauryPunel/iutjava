@@ -33,10 +33,7 @@ public class AgendaPanelFactory {
 	public JPanel getAgendaView(ActiveView activeView) {
 		JPanel agendaView = null;
 		switch (activeView) {
-			case MONTH_VIEW:
-				MonthPanel monthPanel = new MonthPanel();
-				agendaView = monthPanel;
-				break;
+			
 			case WEEK_VIEW:
 				WeekPanel weekPanel = new WeekPanel();
 				agendaView = weekPanel;

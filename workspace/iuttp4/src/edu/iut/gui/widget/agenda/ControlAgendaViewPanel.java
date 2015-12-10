@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.JPanel;
@@ -15,6 +16,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SpinnerModel;
 
 import edu.iut.app.ApplicationSession;
+import edu.iut.gui.frames.SchedulerFrame;
 
 public class ControlAgendaViewPanel extends JPanel {
 
@@ -48,9 +50,18 @@ public class ControlAgendaViewPanel extends JPanel {
 				agendaViewLayout.next(contentPane);				
 			}			
 		});*/
+		JButton btnAjout = new JButton("Ajouter un évenement");
+		btnAjout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AjoutEvenementPanel.showEventCreate();
+			}
+		});
 		commandPanel.add(yearsSpinner);
 		commandPanel.add(monthComboBox);
 		commandPanel.add(daysOfWeekComboBox);
+		commandPanel.add(btnAjout);
 		this.add(commandPanel, BorderLayout.CENTER);
         this.add(bottom, BorderLayout.PAGE_END);
 	}

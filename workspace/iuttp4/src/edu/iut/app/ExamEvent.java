@@ -9,6 +9,7 @@ public class ExamEvent {
 	
 	public ExamEvent(Date date, Person person, ArrayList<Person> jury,
 					Classroom classRoom, ArrayList<Document> document) {
+		examDate=date;
 		
 	}
 	
